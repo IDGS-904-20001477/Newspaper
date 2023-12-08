@@ -1,7 +1,8 @@
 ---
 import { marked } from "marked";
-import { formatDistance, format } from "date-fns";
 import moment from "moment";
+moment.locale('es');
+
 
 const { post } = Astro.props;
 
@@ -69,12 +70,12 @@ const publishedDate = moment(publishedAt, "YYYYMMDD").fromNow();
     >
       <header class="mb-4 lg:mb-6 not-format">
         <span
-          class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 dark:bg-blue-900 dark:text-blue-300 rounded-full"
+          class="bg-blue-200 text-blue-800 text-xs font-medium me-2 px-2.5 py-1.5 dark:bg-blue-900 dark:text-blue-300 rounded-full"
         >
           {category["data"]["attributes"]["Name"]}
         </span>
         <h1
-          class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white text-start"
+          class="mb-4 text-3xl font-bold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white text-start"
         >
           {title}
         </h1>
@@ -204,6 +205,7 @@ const publishedDate = moment(publishedAt, "YYYYMMDD").fromNow();
     </div>
   </div>
 </aside>
+<<<<<<< Updated upstream
 
 <section class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -287,3 +289,5 @@ const shareOnTwitter = () => {
   );
 };
 </script>
+=======
+>>>>>>> Stashed changes
