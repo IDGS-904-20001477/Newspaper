@@ -23,9 +23,7 @@ const publishedDate = moment(publishedAt, "YYYYMMDD").fromNow();
 
 <section class="w-full h-72">
   <img
-    src={postImage
-      ? url + postImage
-      : "https://via.placeholder.com/1080"}
+    src={postImage ? url + postImage : "https://via.placeholder.com/1080"}
     alt="Historia"
     class="w-full h-full object-cover z-0"
   />
@@ -82,6 +80,18 @@ const publishedDate = moment(publishedAt, "YYYYMMDD").fromNow();
         </h1>
       </header>
       <div set:html={marked.parse(content)} />
+
+      <div class="w-full flex items-center justify-start">
+        <div>
+          <button
+            type="button"
+            class="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2"
+            onclick="{ shareOnTwitter() }"
+          >
+            <i class="fa-brands fa-x-twitter"></i>&nbsp; Compartir en Twitter
+          </button>
+        </div>
+      </div>
     </article>
   </div>
 </section>
@@ -266,3 +276,14 @@ const publishedDate = moment(publishedAt, "YYYYMMDD").fromNow();
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+const shareOnTwitter = () => {
+  window.open(
+    "https://twitter.com/intent/tweet?url=" +
+    encodeURIComponent(window.location.href),
+    "_blank",
+    "width=600,height=300",
+  );
+};
+</script>
