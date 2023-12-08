@@ -1,0 +1,16 @@
+---
+import BlogGridItem from "./BlogGridItem.astro";
+const { posts } = Astro.props;
+---
+
+<section class="container mx-auto my-10">
+  <div class="flex items-center w-full">
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-7">
+      {
+        posts.data && posts.data.length > 0
+          ? posts.data.map((post) => <BlogGridItem post={post} />)
+          : "No posts founds"
+      }
+    </div>
+  </div>
+</section>
